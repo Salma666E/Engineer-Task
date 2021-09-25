@@ -1,6 +1,10 @@
 # taskapp
 
-A new Flutter project.
+Engineer-Task
+
+Task Management System. (Web Application, Mobile Application)
+
+Flutter and Dart project.
 
 ## Getting Started
 
