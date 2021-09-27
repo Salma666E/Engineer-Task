@@ -1,3 +1,5 @@
+import 'package:taskapp/models/tasks.dart';
+
 import './models/users_account.dart';
 
 List<UserAcount> DUMMY_EMAILS = [
@@ -12,5 +14,13 @@ List<UserAcount> DUMMY_EMAILS = [
   const UserAcount(
     email: 'essam666@yahoo.com',
     password: 'Essam0000',
+  )
+];
+
+List<Task> DUMMY_TASKS = [
+  const Task(
+    taskName: 'task1',
+    projectName: 'project1',
+    userDo: 'Ahmed Ali',
   )
 ];

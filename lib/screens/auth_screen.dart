@@ -4,7 +4,7 @@ import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:taskapp/providers/auth.dart';
+import 'package:taskapp/providers/auth_provider.dart';
 
 class AuthScreen extends StatefulWidget {
   static const routName = "/Auth";

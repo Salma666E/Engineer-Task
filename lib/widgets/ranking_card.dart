@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taskapp/models/custom_style.dart';
+import 'package:taskapp/utilities/url_launcher.dart';
 import 'package:taskapp/widgets/custom_text.dart';
 
 class RankingCard extends StatelessWidget {
@@ -72,14 +73,7 @@ class RankingCard extends StatelessWidget {
                           backgroundColor:
                               MaterialStateProperty.all<Color>(Colors.blue),
                         ),
-                        // .styleFrom(
-                        //   primary: Colors.white,
-                        //   backgroundColor: Colors.blue,
-                        //   shape: const RoundedRectangleBorder(
-                        //     borderRadius: BorderRadius.all(Radius.circular(2)),
-                        //   ),
-                        // ),
-                        onPressed: () {},
+                        onPressed: ()=>launchInBrowser('https://slack.com/'),
                         child: Text(
                           'JOIN NOW',
                           style: custom_text_small,

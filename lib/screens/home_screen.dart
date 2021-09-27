@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:taskapp/providers/theme_provider.dart';
+import 'package:taskapp/screens/auth_screen.dart';
 import 'package:taskapp/widgets/about_card.dart';
 import 'package:taskapp/widgets/client_saying_card.dart';
 import 'package:taskapp/widgets/custom_text.dart';
@@ -38,7 +41,13 @@ class HomaScreen extends StatelessWidget {
                       children: [
                         const Text('Robot Valley'),
                         InkWell(
-                          onTap: () {}, //Not working yet
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AuthScreen(),
+                                ));
+                          }, //Not working yet
                           child: Container(
                               padding: const EdgeInsets.symmetric(
                                   vertical: 4.0, horizontal: 15),
@@ -89,12 +98,17 @@ class HomaScreen extends StatelessWidget {
                           child: TextField(
                             controller: _emailController,
                             maxLines: 1,
+
                             autocorrect: true,
                             keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(
                               hintText: 'Name@Company.com',
                               hintStyle: fontSize_textfield,
                               labelStyle: fontSize_textfield,
+                              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Provider.of<ThemeProvider>(context, listen: true).darkTheme? Colors.white: Colors.black),
+                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                ),
                               border: const OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(30.0)),
@@ -103,7 +117,12 @@ class HomaScreen extends StatelessWidget {
                           ),
                         ),
                         InkWell(
-                          onTap: () {}, //Not working yet
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AuthScreen(),
+                                ));}, //Not working yet
                           child: Container(
                               margin: const EdgeInsets.only(left: 5.0),
                               padding: const EdgeInsets.symmetric(
@@ -378,6 +397,10 @@ class HomaScreen extends StatelessWidget {
                             keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(
                               hintText: 'Name@Company.com',
+                              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Provider.of<ThemeProvider>(context, listen: true).darkTheme? Colors.white: Colors.black),
+                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                ),
                               hintStyle: fontSize_textfield,
                               labelStyle: fontSize_textfield,
                               border: const OutlineInputBorder(
@@ -388,7 +411,12 @@ class HomaScreen extends StatelessWidget {
                           ),
                         ),
                         InkWell(
-                          onTap: () {}, //Not working yet
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AuthScreen(),
+                                ));}, //Not working yet
                           child: Container(
                               margin: const EdgeInsets.only(left: 5.0),
                               padding: const EdgeInsets.symmetric(
