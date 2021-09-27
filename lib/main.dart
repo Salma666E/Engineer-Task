@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'providers/auth_provider.dart';
@@ -32,7 +31,6 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             accentColor: Colors.redAccent,
             canvasColor: Colors.white,
-            // fontFamily: 'Raleway',
             buttonColor: Colors.black87,
             cardColor: Colors.white,
             shadowColor: Colors.black87,

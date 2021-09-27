@@ -15,10 +15,11 @@ class ImageIconWdg extends StatelessWidget {
         height: 20,
         margin: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(img),
-                alignment: Alignment.center,
-                fit: BoxFit.fill)),
+          image: DecorationImage(
+              image: AssetImage(img),
+              alignment: Alignment.center,
+              fit: BoxFit.fill),
+        ),
       ),
     );
   }

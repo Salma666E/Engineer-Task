@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:taskapp/models/custom_style.dart';
 
-import 'border_side.dart';
+import 'small_widget.dart';
 
 class ClientSayingCard extends StatelessWidget {
   final String img;
@@ -59,13 +59,14 @@ class ClientSayingCard extends StatelessWidget {
                         ),
                         Text(
                           title,
-                          style: const TextStyle(fontSize: 6, color: Colors.grey),
+                          style:
+                              const TextStyle(fontSize: 6, color: Colors.grey),
                         ),
                       ],
                     ),
                   )
                 ],
-              ), // ///
+              ),
               const SizedBox(
                 height: 15,
               ),

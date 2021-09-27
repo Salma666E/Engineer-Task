@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:taskapp/models/users_account.dart';
 import 'package:taskapp/providers/theme_provider.dart';
+import 'package:taskapp/widgets/textfield.dart';
 
 import '../dummy_data.dart';
 
@@ -28,44 +29,13 @@ class SettingScreen extends StatelessWidget {
               Provider.of<ThemeProvider>(context, listen: false)
                   .changeThemeMode(value);
             },
-            value: Provider.of<ThemeProvider>(context, listen: true)
-                .darkTheme, //_toggleAirplaneMode,
+            value: Provider.of<ThemeProvider>(context, listen: true).darkTheme,
           ),
           SizedBox(
             height: 30,
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: _emailController,
-              maxLines: 1,
-              autocorrect: true,
-              style: TextStyle(color: Colors.black),
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                labelText: "New Email",
-                fillColor: Colors.grey[300], filled: true,
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                      color: Provider.of<ThemeProvider>(context, listen: true)
-                              .darkTheme
-                          ? Colors.white
-                          : Colors.black),
-                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                ),
-                
-                hintText: 'Write your email...',
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                      color: Provider.of<ThemeProvider>(context, listen: true)
-                              .darkTheme
-                          ? Colors.white
-                          : Colors.black),
-                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                ),
-              ),
-            ),
-          ),
+          textField("New Email", 'Write your email...', _emailController,
+              TextInputType.emailAddress,8.0, context),
           Padding(
             padding: const EdgeInsets.all(30.0),
             child: InkWell(

@@ -88,19 +88,24 @@ class Dashboard extends StatelessWidget {
                         controller: _searchController,
                         textAlign: TextAlign.justify,
                         maxLines: 1,
-              style: TextStyle(color: Colors.black,fontSize: 14),
+                        style: TextStyle(color: Colors.black, fontSize: 14),
                         autocorrect: true,
-                        
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Provider.of<ThemeProvider>(context, listen: true).darkTheme? Colors.white: Colors.black),
-                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                ),
+                            borderSide: BorderSide(
+                                color: Provider.of<ThemeProvider>(context,
+                                            listen: true)
+                                        .darkTheme
+                                    ? Colors.white
+                                    : Colors.black),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(30.0)),
+                          ),
                           contentPadding: EdgeInsets.only(top: 3, left: 10),
-                          
-                fillColor: Colors.grey[300], filled: true,
-                          hintStyle: TextStyle(color:Colors.black),
+                          fillColor: Colors.grey[300],
+                          filled: true,
+                          hintStyle: TextStyle(color: Colors.black),
                           hintText: 'Search',
                           suffixIcon: InkWell(
                               onTap: () {

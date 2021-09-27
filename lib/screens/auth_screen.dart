@@ -1,5 +1,6 @@
-import 'dart:math';
+// ignore_for_file: prefer_const_constructors
 
+import 'dart:math';
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -50,6 +51,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.deepOrange.shade900,
+                        // ignore: prefer_const_literals_to_create_immutables
                         boxShadow: [
                           BoxShadow(
                               blurRadius: 8,

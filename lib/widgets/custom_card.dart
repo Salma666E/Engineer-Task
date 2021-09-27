@@ -1,5 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import '/models/custom_style.dart';
+import 'package:taskapp/widgets/small_widget.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard(this.img, this.size, this.title, this.body);
@@ -21,18 +23,14 @@ class CustomCard extends StatelessWidget {
               height: 25,
             ),
           ),
-          SizedBox(height: 15,),
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: custom_style_title,
+          SizedBox(
+            height: 15,
           ),
-          SizedBox(height: 8,),
-          Text(
-            body,
-            textAlign: TextAlign.center,
-            style: custom_style_body,
+          textCustom(title),
+          SizedBox(
+            height: 8,
           ),
+          textCustom(body),
         ],
       ),
     );

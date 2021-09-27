@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:taskapp/screens/home_screen.dart';
-
 import 'new_task_screen.dart';
 import 'setting_screen.dart';
 
@@ -33,9 +31,8 @@ class DrawerScreen extends StatelessWidget {
             children: [
               ListTile(
                 title: Text('Back',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18)),
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
                 trailing: icon(
                   Icons.arrow_forward,
                 ),
@@ -46,9 +43,8 @@ class DrawerScreen extends StatelessWidget {
                   Icons.home,
                 ),
                 title: Text('Home',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18)),
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
                 onTap: () {
                   Navigator.of(context).pop();
                   Navigator.push(
@@ -64,9 +60,8 @@ class DrawerScreen extends StatelessWidget {
                   Icons.settings,
                 ),
                 title: Text('Setting',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18)),
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
                 onTap: () {
                   Navigator.of(context).pop();
                   Navigator.push(
@@ -82,9 +77,8 @@ class DrawerScreen extends StatelessWidget {
                   Icons.add,
                 ),
                 title: Text('New Task',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18)),
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
                 subtitle: Text('or Project',
                     style: TextStyle(
                         color: Colors.grey,

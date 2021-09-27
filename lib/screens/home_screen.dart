@@ -6,6 +6,7 @@ import 'package:taskapp/widgets/about_card.dart';
 import 'package:taskapp/widgets/client_saying_card.dart';
 import 'package:taskapp/widgets/custom_text.dart';
 import 'package:taskapp/widgets/ranking_card.dart';
+import 'package:taskapp/widgets/small_widget.dart';
 import '/widgets/custom_card.dart';
 import '/models/custom_style.dart';
 import '../widgets/img_icon.dart';
@@ -15,7 +16,7 @@ class HomaScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _emailController = TextEditingController();
+    final emailController = TextEditingController();
     final deviceSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
@@ -66,9 +67,7 @@ class HomaScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 50,
-                    ),
+                    sizeBox(50),
                     SizedBox(
                       width: deviceSize.width * 0.6,
                       child: Column(
@@ -77,52 +76,27 @@ class HomaScreen extends StatelessWidget {
                         children: [
                           CustomText('Task Management and list Tool',
                               custom_text_style1),
-                          const SizedBox(
-                            height: 20,
-                          ),
+                          sizeBox(20),
                           CustomText(
                               'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.',
                               custom_text_style2),
-                          const SizedBox(
-                            height: 20,
-                          ),
+                          sizeBox(20),
                         ],
                       ),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          height: 50,
-                          width: deviceSize.width * 0.5,
-                          child: TextField(
-                            controller: _emailController,
-                            maxLines: 1,
-
-                            autocorrect: true,
-                            keyboardType: TextInputType.emailAddress,
-                            decoration: InputDecoration(
-                              hintText: 'Name@Company.com',
-                              hintStyle: fontSize_textfield,
-                              labelStyle: fontSize_textfield,
-                              enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Provider.of<ThemeProvider>(context, listen: true).darkTheme? Colors.white: Colors.black),
-                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                ),
-                              border: const OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(30.0)),
-                              ),
-                            ),
-                          ),
-                        ),
+                        formInput(
+                            emailController, deviceSize.width * 0.5, context),
                         InkWell(
                           onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => AuthScreen(),
-                                ));}, //Not working yet
+                                ));
+                          }, //Not working yet
                           child: Container(
                               margin: const EdgeInsets.only(left: 5.0),
                               padding: const EdgeInsets.symmetric(
@@ -141,9 +115,7 @@ class HomaScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 50,
-                    ),
+                    sizeBox(50),
                     Padding(
                       padding: const EdgeInsets.only(left: 10.0),
                       child: Row(
@@ -193,9 +165,7 @@ class HomaScreen extends StatelessWidget {
                         style: custom_style_title,
                       )),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    sizeBox(20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
@@ -216,9 +186,7 @@ class HomaScreen extends StatelessWidget {
                             "Tracking tasks allows everyone to understand which are more important orr require more time, so"),
                       ],
                     ),
-                    const SizedBox(
-                      height: 30,
-                    ),
+                    sizeBox(30),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -227,9 +195,7 @@ class HomaScreen extends StatelessWidget {
                           child: Image.asset('assets/images/cards.png',
                               width: deviceSize.width * 0.3),
                         ),
-                        const SizedBox(
-                          width: 5.0,
-                        ),
+                        sizeBox(5.0),
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -238,15 +204,11 @@ class HomaScreen extends StatelessWidget {
                               CustomText(
                                   'Why do you need task management software?',
                                   custom_text_style1),
-                              const SizedBox(
-                                height: 20,
-                              ),
+                              sizeBox(20),
                               CustomText(
                                   'Do you waste time organizing sticky notes, searching your email and apps for to-dos, and figuring out what to work on first?\nThen you need one solution to prioritize your tasks, manage your time, and meet your deadlines.',
                                   custom_text_style2),
-                              const SizedBox(
-                                height: 30,
-                              ),
+                              sizeBox(30),
                               Row(
                                 children: [
                                   CustomText('LEARN MORE', custom_text_style3),
@@ -263,9 +225,7 @@ class HomaScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 50,
-                    ),
+                    sizeBox(50),
                     Stack(
                       children: [
                         Positioned(
@@ -290,18 +250,14 @@ class HomaScreen extends StatelessWidget {
                                   'Seamless Team Workflow & Efficient Task Management',
                                   custom_text_style1),
                             ),
-                            const SizedBox(
-                              height: 20,
-                            ),
+                            sizeBox(20),
                             Padding(
                               padding: const EdgeInsets.only(right: 150.0),
                               child: CustomText(
                                   'Do you waste time organizing sticky notes, searching your email and apps for to-dos, and figuring out what to work on first?\nThen you need one solution to prioritize your tasks, manage your time, and meet your deadlines.',
                                   custom_text_style2),
                             ),
-                            const SizedBox(
-                              height: 30,
-                            ),
+                            sizeBox(30),
                             Row(
                               children: [
                                 CustomText('LEARN MORE', custom_text_style3),
@@ -313,27 +269,19 @@ class HomaScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            const SizedBox(
-                              height: 200,
-                            ),
+                            sizeBox(200),
                           ],
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    sizeBox(20),
+                    sizeBox(20),
                     Center(
                         child: Text(
                       'What clients are saying?',
                       style: fontSize_textfield,
                     )),
-                    const SizedBox(
-                      height: 10,
-                    ),
+                    sizeBox(10),
                     Row(
                       children: const [
                         Expanded(
@@ -362,9 +310,7 @@ class HomaScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    sizeBox(20),
                     const Divider(
                       thickness: 1.2,
                     ),
@@ -373,50 +319,26 @@ class HomaScreen extends StatelessWidget {
                       'Get better work done',
                       style: custom_text_style1,
                     )),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    sizeBox(20),
                     const Center(
                         child: Text(
                       'See why millions of people across 195 countries use Robot Valley.',
                       textAlign: TextAlign.center,
                     )),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    sizeBox(20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          height: 50,
-                          width: deviceSize.width * 0.5,
-                          child: TextField(
-                            controller: _emailController,
-                            maxLines: 1,
-                            autocorrect: true,
-                            keyboardType: TextInputType.emailAddress,
-                            decoration: InputDecoration(
-                              hintText: 'Name@Company.com',
-                              enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Provider.of<ThemeProvider>(context, listen: true).darkTheme? Colors.white: Colors.black),
-                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                ),
-                              hintStyle: fontSize_textfield,
-                              labelStyle: fontSize_textfield,
-                              border: const OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(30.0)),
-                              ),
-                            ),
-                          ),
-                        ),
+                        formInput(
+                            emailController, deviceSize.width * 0.5, context),
                         InkWell(
                           onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => AuthScreen(),
-                                ));}, //Not working yet
+                                ));
+                          }, //Not working yet
                           child: Container(
                               margin: const EdgeInsets.only(left: 5.0),
                               padding: const EdgeInsets.symmetric(
@@ -435,9 +357,7 @@ class HomaScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    sizeBox(20),
                   ],
                 ),
               ],

@@ -1,11 +1,9 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:taskapp/models/tasks.dart';
 import 'package:taskapp/providers/task_provider.dart';
-import 'package:taskapp/providers/theme_provider.dart';
-import 'package:taskapp/screens/dashboard_screen.dart';
+import 'package:taskapp/widgets/textfield.dart';
 
 import '../dummy_data.dart';
 
@@ -25,85 +23,9 @@ class NewTaskScreen extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: TextField(
-                controller: _taskController,
-                minLines: 1,
-                autocorrect: true,
-                style: TextStyle(color: Colors.black),
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  label: Text("Task name", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
-                  fillColor: Colors.grey[300],
-                  filled: true,
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color: Provider.of<ThemeProvider>(context, listen: true)
-                                .darkTheme
-                            ? Colors.white
-                            : Colors.black),
-                    borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                  ),
-                  border: OutlineInputBorder(
-                    // borderSide:  BorderSide(style: BorderStyle.solid, color: Provider.of<ThemeProvider>(context, listen: true).darkTheme? Colors.white: Colors.black),
-                    borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: TextField(
-                controller: _projectController,
-                minLines: 1,
-                autocorrect: true,
-                style: TextStyle(color: Colors.black),
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  label: Text("For project", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
-                  fillColor: Colors.grey[300],
-                  filled: true,
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color: Provider.of<ThemeProvider>(context, listen: true)
-                                .darkTheme
-                            ? Colors.white
-                            : Colors.black),
-                    borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                  ),
-                  border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: TextField(
-                controller: _userController,
-                minLines: 1,
-                autocorrect: true,
-                style: TextStyle(color: Colors.black),
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  label: Text("Who does that?", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
-                  fillColor: Colors.grey[300],
-                  filled: true,
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color: Provider.of<ThemeProvider>(context, listen: true)
-                                .darkTheme
-                            ? Colors.white
-                            : Colors.black),
-                    borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                  ),
-                  border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                  ),
-                ),
-              ),
-            ),
+            textFieldSetting(_taskController, "Task name", context),
+            textFieldSetting(_projectController, "For project", context),
+            textFieldSetting(_userController, "Who does that?", context),
             Padding(
               padding: const EdgeInsets.all(30.0),
               child: InkWell(
