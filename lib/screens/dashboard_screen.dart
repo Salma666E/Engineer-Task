@@ -131,14 +131,11 @@ class Dashboard extends StatelessWidget {
           SizedBox(
             height: 35,
           ),
-          Padding(
-              padding: EdgeInsets.all(10),
-              child: Text('Robot Valley',
-                  style: TextStyle(
-                      color: Provider.of<ThemeProvider>(context, listen: true)
-                              .darkTheme
-                          ? Colors.green
-                          : Colors.white))),
+          if (Provider.of<ThemeProvider>(context, listen: true).darkTheme)
+            Padding(
+                padding: EdgeInsets.all(10),
+                child: Text('Robot Valley',
+                    style: TextStyle(color: Colors.green))),
           Divider(
             thickness: 2,
             color: Provider.of<ThemeProvider>(context, listen: true).darkTheme
